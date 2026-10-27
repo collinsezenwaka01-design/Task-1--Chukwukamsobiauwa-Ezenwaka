@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --background: #030a19;
+  --blue: #078bff;
+  --cyan: #00d9ff;
+  --text: #f4f7ff;
+  --muted: #b5c8e8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 45%, #071b40, transparent 55%),
+    var(--background);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.topbar {
+  min-height: 76px;
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #12305a;
+}
+
+.brand {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.brand span {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-left: 12px;
+}
+
+.tagline, .eyebrow {
+  color: #50baff;
+  letter-spacing: 3px;
+  font-size: .75rem;
+}
+
+main {
+  min-height: 690px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  align-items: center;
+  gap: 25px;
+  padding: 55px 5%;
+}
+
+.intro h1 {
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  margin: 12px 0;
+}
+
+.intro h1 span {
+  color: #168fff;
+}
+
+.intro h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.description {
+  color: var(--muted);
+}
+
+.connect {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.navigation {
+  position: relative;
+  width: min(100%, 440px);
+  aspect-ratio: 1;
+  margin: auto;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px dashed #075cb8;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-one {
+  inset: 8%;
+}
+
+.orbit-two {
+  inset: 20%;
+}
+
+.nav-circle, .home-circle {
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: white;
+  background: #06132b;
+  cursor: pointer;
+  transition: transform .25s, box-shadow .25s, opacity .25s;
+}
+
+.nav-circle {
+  width: 26%;
+  aspect-ratio: 1;
+  border: 2px solid var(--blue);
+  box-shadow: 0 0 16px #006eff40;
+}
+
+.nav-circle:hover, .nav-circle:focus-visible {
+  transform: scale(1.08);
+  box-shadow: 0 0 24px #008cff90;
+}
+
+.symbol {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.about {
+  top: 2%;
+  left: 37%;
+}
+
+.projects {
+  top: 29%;
+  right: 0;
+  border-color: #00d6bd;
+}
+
+.skills {
+  bottom: 2%;
+  right: 19%;
+  border-color: #8c49ff;
+}
+
+.resume {
+  bottom: 2%;
+  left: 19%;
+  border-color: #ff9b28;
+}
+
+.contact {
+  top: 29%;
+  left: 0;
+  border-color: #ff32cf;
+}
+
+.home-circle {
+  top: 35%;
+  left: 35%;
+  width: 30%;
+  aspect-ratio: 1;
+  border: 3px solid var(--cyan);
+  box-shadow: 0 0 30px #007bff85;
+  font-size: 1.1rem;
+}
+
+.home-circle .symbol {
+  font-size: 2.8rem;
+}
+
+.navigation.menu-hidden .nav-circle {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(.5);
+}
+
+.navigation.menu-hidden .orbit {
+  opacity: 0;
+}
+
+.quote {
+  color: #c0dcff;
+  font-size: 1.15rem;
+}
+
+.quote-mark {
+  color: var(--cyan);
+  font-size: 2.5rem;
+}
+
+.quote p {
+  color: #56baff;
+  font-size: .75rem;
+  letter-spacing: 3px;
+}
+
+.hint {
+  text-align: center;
+  color: #67baff;
+  padding: 0 15px 30px;
+}
+
+.content-section {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 30px;
+  border: 1px solid #174579;
+  border-radius: 16px;
+  background: #07142a;
+}
+
+.content-section[hidden] {
+  display: none;
+}
+
+.content-section h2 {
+  color: var(--cyan);
+}
+
+.back-button {
+  padding: 10px 15px;
+  border: 1px solid #278cff;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  color: #9eb7da;
+  padding: 25px;
+  border-top: 1px solid #12305a;
+}
+
+@media (max-width: 850px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 35px 6%;
+  }
+
+  .intro {
+    text-align: center;
+  }
+
+  .navigation {
+    width: min(88vw, 390px);
+  }
+
+  .quote {
+    max-width: 480px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .tagline {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand span {
+    font-size: .85rem;
+  }
+
+  .symbol {
+    font-size: 1.5rem;
+  }
+
+  .home-circle .symbol {
+    font-size: 2rem;
+  }
+
+  .nav-circle {
+    font-size: .8rem;
+  }
+
+  .home-circle {
+    font-size: .9rem;
+  }
+
+  .content-section {
+    margin: 15px;
+    padding: 20px;
+  }
+}
